@@ -28,8 +28,8 @@ module ApiTaster
           member { map_method :patch, :update }
         end
       end
-    end
 
+<<<<<<< HEAD
     context "#global_params" do
       before(:all) do
         ApiTaster.global_params = { :foo => 'bar' }
