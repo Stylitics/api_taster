@@ -18,12 +18,9 @@ module ApiTaster
 
         normalise_routes!
 
-        begin
-          ApiTaster::RouteCollector.collect(path)
-          Mapper.instance_eval(&self.mappings)
-        rescue
-          Route.mappings = {}
-        end
+        ApiTaster::RouteCollector.collect(path)
+        Mapper.instance_eval(&self.mappings)
+        Route.mappings = {}
       end
 
       def normalise_routes!
